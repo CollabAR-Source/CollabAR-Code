@@ -46,7 +46,7 @@ To train the distortion classifier, follow the procedure below:
 
 1. Download the training script.
 2. Then, put the script and the training set folder in a same dir. Note that the training set folder cannot contain any non-image file.
-3. Run the script as follows: `python .\trainDisClassifer.py -training_set
+3. Run the script as follows: python .\trainDisClassifer.py -training_set
    - *training_set*: indicates dir that contains the training images.
 5. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
 
