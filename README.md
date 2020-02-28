@@ -31,7 +31,7 @@ spectrum of the grayscale image, and shift the zero-frequency component to the c
 used as the input for a shallow CNN architecture.
 
 #### 1.1.2 Image distortion classifier training
-The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset because this script can generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images to train the classifer. To train the distortion classifier, follow the procedure below:
+The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset because this script can generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images for training the classifer. To train the distortion classifier, follow the procedure below:
 
 1. Before running the script, you should install the necessary tools and libraries on your computer, including: open-cv, skimage, numpy, keras, tensorflow and sklearn. The versions of these libraries are shown at the very beginning of *README*. 
 2. Download the training script.
