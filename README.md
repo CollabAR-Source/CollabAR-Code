@@ -2,6 +2,8 @@
 
 This repository contains the introductions and the code of the distortion-tolerant image recognizer and the auxiliary-assisted multi-view ensembler for IPSN 2020 paper ["CollabAR: Edge-assisted Collaborative Image Recognition for Mobile Augmented Reality"]() by [Zida Liu](daliu.github.io), [Guohao Lan](https://guohao.netlify.com/), Jovan Stojkovic, Yunfan Zhang, [Carlee Joe-Wong](https://www.andrew.cmu.edu/user/cjoewong/), and [Maria Gorlatova](https://maria.gorlatova.com/).
 
+Before running the scripts in this repository, you should install the necessary tools and libraries on your computer, including: open-cv, skimage, numpy, keras, tensorflow and sklearn.
+
 **Summary**:
 
 * [Distortion-tolerant-image-recognizer](#1)
@@ -31,12 +33,20 @@ spectrum of the grayscale image, and shift the zero-frequency component to the c
 used as the input for a shallow CNN architecture.
 
 #### 1.1.2 Image distortion classifier training
-The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset because this script can generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images for training the classifer. To train the distortion classifier, follow the procedure below:
+The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset for training the classifer because this script can automatically generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images. Default distortion levels for generating distorted images are shown in the following table. You can change them in the script for your need.
 
-1. Before running the script, you should install the necessary tools and libraries on your computer, including: open-cv, skimage, numpy, keras, tensorflow and sklearn. The versions of these libraries are shown at the very beginning of *README*. 
-2. Download the training script.
-3. Then, put the script and the folder containing training images in a same dir. Note that the folder of training images cannot contain any non-image file.
-4. Run the script as follows: `python .\trainDisClassifer.py -training_set
+| Distortion category | Distortion parameter | Default distortion level |
+| ------ | ------ | ------ |
+| Motion blur | Blur kernel length | l ~ unif(5,30) |
+| Gaussian blur | Aperture size | k ~ unif(5,31) |
+| Gaussian noise | Variance | var ~ unif(10,30) |
+
+
+To train the distortion classifier, follow the procedure below:
+
+1. Download the training script.
+2. Then, put the script and the folder containing training images in a same dir. Note that the folder of training images cannot contain any non-image file.
+3. Run the script as follows: `python .\trainDisClassifer.py -training_set
    - *training_set*: indicates dir that contains the training images.
 5. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
 
