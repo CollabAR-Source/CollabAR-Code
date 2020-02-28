@@ -24,7 +24,7 @@ domain patterns for distortion classification.
 
 
 #### 1.1.1 The pipeline of the image distortion classification
-<img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/DistortionClassification.PNG" width = "500" height = "100" hspace="190" align=center />
+<img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/DistortionClassification.PNG" width = "500" height = "100" hspace="150" align=center />
 
 
 
