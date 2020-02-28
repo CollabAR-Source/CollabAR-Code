@@ -10,8 +10,7 @@ This repository contains the introductions and the code of the distortion-tolera
 * [Acknowledgements](#4)
 
 
+## 1. <span id="1">Distortion-tolerant-image-recognizer</span>
+In the CollabAR system, the distortion image recognizer incorporates an image distortion classifier and four recognition experts to resolve the domain adaptation problem caused by the image distortions. As DNNs can adapt to a particular distortion, but not multiple distortions at the same time, we need to identify the most significant distortion in the image, and adaptively select a DNN that is dedicated to the detected distortion. 
 
-# Distortion-tolerant-image-recognizer
-In the CollabAR system, the distortion image recognizer incorporates an image distortion classifier and four recognition experts to resolve the domain adaptation problem caused by the image distortions. As DNNs can adapt to a particular distortion, but not multiple distortions
-at the same time, we need to identify the most significant distortion in the image, and adaptively select a DNN that is dedicated to the detected distortion. 
-
+### 1.1 Distortion classifier
