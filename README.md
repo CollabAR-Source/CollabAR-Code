@@ -26,15 +26,15 @@ domain patterns for distortion classification.
 #### 1.1.1 The pipeline of the image distortion classifier
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/DistortionClassification.PNG" width = "500" height = "100" hspace="150" align=center />
 
-The figure above shows the pipeline of the image distortion classification. First, we convert the original RGB image into grayscale using the standard Rec. 601 luma coding method. Then, we apply the twodimensional discrete Fourier transform (DFT) to obtain the Fourier
+The figure above shows the pipeline of the image distortion classification. First, we convert the original RGB image into grayscale using the standard Rec. 601 luma coding method. Then, we apply the two-dimensional discrete Fourier transform (DFT) to obtain the Fourier
 spectrum of the grayscale image, and shift the zero-frequency component to the center of the spectrum. The centralized spectrum is
 used as the input for a shallow CNN architecture.
 
 #### 1.1.2 Image distortion classifier training
-To train the distortion classifier, follow the procedure below:
+The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset because this script can generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images to train the classifer. To train the distortion classifier, follow the procedure below:
 
 1. Before running the script, you should install the necessary tools and libraries on your computer, including: open-cv, skimage, numpy, keras, tensorflow and sklearn. The versions of these libraries are shown at the very beginning of *README*. 
-2. Download the training script via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py.
+2. Download the training script.
 3. Then, put the script and the folder containing training images in a same dir. Note that the folder of training images cannot contain any non-image file.
 4. Run the script as follows: `python .\trainDisClassifer.py -training_set
    - *training_set*: indicates dir that contains the training images.
