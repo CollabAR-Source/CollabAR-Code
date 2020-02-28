@@ -34,14 +34,10 @@ used as the input for a shallow CNN architecture.
 To train the distortion classifier, follow the procedure below:
 
 1. Before running the script, you should install the necessary tools and libraries on your computer, including: open-cv, skimage, numpy, keras, tensorflow and sklearn. The versions of these libraries are shown at the very beginning of *README*. 
-2. Then, put the script under the folder ''MVMDD''.
-3. Run the script as follows: `python .\distortion_generation.py -source_dir -distortion_type -distortion_degree`
-   - *source_dir*: indicates the original dir that contains the pristine images.
-   - *distortion_type*: indicates the type of distortion you would like to synthesize. There are three options available: 
-      - *MB* for motion blur 
-      - *GB* for Gaussian blur 
-      - *GN* for Gaussian noise
-   - *distortion_degree*: indicates the distortion level you would like to set.
- 4. The generated images will be saved in the generated folder.
+2. Download the training script via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py.
+3. Then, put the script and the folder containing training images in a same dir. Note that the folder containing training images cannot include any other file except for images.
+4. Run the script as follows: `python .\trainDisClassifer.py -training_set
+   - *training_set*: indicates dir that contains the training images.
+5. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
 
 
