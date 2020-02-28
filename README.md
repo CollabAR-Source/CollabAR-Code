@@ -35,7 +35,7 @@ To train the distortion classifier, follow the procedure below:
 
 1. Before running the script, you should install the necessary tools and libraries on your computer, including: open-cv, skimage, numpy, keras, tensorflow and sklearn. The versions of these libraries are shown at the very beginning of *README*. 
 2. Download the training script via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py.
-3. Then, put the script and the folder containing training images in a same dir. Note that the folder containing training images cannot include any other file except for images.
+3. Then, put the script and the folder containing training images in a same dir. Note that the folder of training images cannot contain any non-image file.
 4. Run the script as follows: `python .\trainDisClassifer.py -training_set
    - *training_set*: indicates dir that contains the training images.
 5. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
