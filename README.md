@@ -31,5 +31,17 @@ spectrum of the grayscale image, and shift the zero-frequency component to the c
 used as the input for a shallow CNN architecture.
 
 #### 1.1.2 Image distortion classifier training
+To train the distortion classifier, follow the procedure below:
+
+1. Before running the script, you should install the necessary tools and libraries on your computer, including: open-cv, skimage, numpy, keras, tensorflow and sklearn. The versions of these libraries are shown at the very beginning of *README*. 
+2. Then, put the script under the folder ''MVMDD''.
+3. Run the script as follows: `python .\distortion_generation.py -source_dir -distortion_type -distortion_degree`
+   - *source_dir*: indicates the original dir that contains the pristine images.
+   - *distortion_type*: indicates the type of distortion you would like to synthesize. There are three options available: 
+      - *MB* for motion blur 
+      - *GB* for Gaussian blur 
+      - *GN* for Gaussian noise
+   - *distortion_degree*: indicates the distortion level you would like to set.
+ 4. The generated images will be saved in the generated folder.
 
 
