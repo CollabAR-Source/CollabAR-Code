@@ -13,7 +13,7 @@ This repository contains the introductions and the code of the distortion-tolera
 ## 1. <span id="1">Distortion-tolerant-image-recognizer</span>
 In the CollabAR system, the distortion image recognizer incorporates an image distortion classifier and four recognition experts to resolve the domain adaptation problem caused by the image distortions. As DNNs can adapt to a particular distortion, but not multiple distortions at the same time, we need to identify the most significant distortion in the image, and adaptively select a DNN that is dedicated to the detected distortion. The architecture is shown below:
 
-![image](https://github.com/CollabAR-Source/CollabAR-Code/figures/Distortion-tolerant.PNG) 
+<img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Distortion-tolerant.PNG" width = "600" height = "180" hspace="70" align=center />
 
 ### 1.1 Distortion classifier
 Different types of distortion have distinct impacts on the frequency domain features of the original images. Gaussian blur can be considered as having a two-dimensional circularly symmetric centralized Gaussian convolution on the original image in the spatial domain. This is equivalent to applying a Gaussian-weighted, circularly shaped low pass filter on the image, which filters out the high frequency components in the original image. Motion blur can be considered as a Gaussian-weighted, directional low pass filter that smooths
