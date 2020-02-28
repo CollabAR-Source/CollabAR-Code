@@ -20,7 +20,11 @@ Different types of distortion have distinct impacts on the frequency domain feat
 the original image along the direction of the motion. Lastly, the Fourier transform of additive Gaussian noise is approximately
 constant over the entire frequency domain, whereas the original image contains mostly low frequency information. Hence, an
 image with severe Gaussian noise will have higher signal energy in the high frequency components. We leverage these distinct frequency
-domain patterns for distortion classification. The pipeline of the image distortion classification is shown below:
+domain patterns for distortion classification. 
+
+
+#### 1.1.1 The pipeline of the image distortion classification
+<img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/DistortionClassification.PNG" width = "500" height = "100" hspace="190" align=center />
 
 
 
