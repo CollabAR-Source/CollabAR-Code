@@ -50,4 +50,4 @@ To train the distortion classifier, follow the procedure below:
    - *training_set*: indicates dir that contains the training images.
 5. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
 
-
+### 1.2 Distortion-tolerant image recognizer
