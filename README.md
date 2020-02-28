@@ -50,4 +50,9 @@ To train the distortion classifier, follow the procedure below:
    - *training_set*: indicates dir that contains the training images.
 5. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
 
-### 1.2 Distortion-tolerant image recognizer
+### 1.2 Recognition experts
+Based on the output of the distortion classifier, one of the four dedicated recognition experts is selected for the image recognition. Here, we use the lightweight MobileNetV2 as the base DNN model for training the recognition experts.
+
+#### 1.2.1 Recognition experts training
+When training the experts, all the CNN layers are first initialized with the values trained on the full ImageNet dataset. Then, we use pristine images in the target dataset to train a pristine expert. Finally, we fine-tune the pristine expert to get motion blur expert, Gaussian blur expert and Gaussian noise expert. During the fine-tuning, half of the images in the mini-batch are pristine and the other half are distorted with a random distortion level. This ensures better robustness against variations in the distortion level (i.e., it helps in minimizing the effect of domain-induced changes in feature distribution) and helps the CNNs to learn features from both
+pristine and distorted images.
