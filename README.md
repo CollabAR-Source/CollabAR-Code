@@ -23,8 +23,13 @@ image with severe Gaussian noise will have higher signal energy in the high freq
 domain patterns for distortion classification. 
 
 
-#### 1.1.1 The pipeline of the image distortion classification
+#### 1.1.1 The pipeline of the image distortion classifier
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/DistortionClassification.PNG" width = "500" height = "100" hspace="150" align=center />
 
+The figure above shows the pipeline of the image distortion classification. First, we convert the original RGB image into grayscale using the standard Rec. 601 luma coding method. Then, we apply the twodimensional discrete Fourier transform (DFT) to obtain the Fourier
+spectrum of the grayscale image, and shift the zero-frequency component to the center of the spectrum. The centralized spectrum is
+used as the input for a shallow CNN architecture.
+
+#### 1.1.2 Image distortion classifier training
 
 
