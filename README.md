@@ -82,9 +82,12 @@ An example of training Gaussian noise expert:
 CollabAR aggregates the recognition results of the spatially and temporally correlated images to improve the recognition accuracy of the current image. However, given the heterogeneity of the m images (i.e., images are captured from different angles, suffer from different distortions with different distortion levels), the images lead to unequal recognition performance. To quantify their performance and help the ensembler in aggregating the results dynamically, auxiliary features can be used. 
 
 
-## 2.1 The architecture of the Auxiliary-assisted multiview ensembler
+### 2.1 The architecture of the Auxiliary-assisted multiview ensembler
 The architecture of the Auxiliary-assisted multiview ensembler is shown below:
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Ensemble.PNG" width = "500" height = "280" hspace="180" align=center />
+We propose to use the normalized
+entropy as the auxiliary feature. The normalized entropy Sk measures the recognition quality and the confidence of the distortiontolerant image recognizer on the recognition of the kth image instance. 
+
 
 
 ## 3. <span id="3">Citation</span>
