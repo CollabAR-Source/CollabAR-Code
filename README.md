@@ -95,11 +95,9 @@ The training script is provided via https://github.com/CollabAR-Source/CollabAR-
 2. You can see the *confidence scores*, *inference result* of a single image and also the aggregated *inference result* of all the images in the folder.
 
 As an example, we provide a group of multi-view images for the auxiliary-assisted multiview ensembler inference.
-   - Run the script as follows: python .\trainExpert.py pristine.
-   - The generated weights named "*pristine_expert.hdf5*" will be saved in a created folder named "*weights*".
-   - Uncomment the 113th line in the script.
-   - Run the script as follows: python .\trainExpert.py GN.
-   - The generated weights named "*Gaussian_noise_expert.hdf5*" will be saved in a created folder named "*weights*".
+   - Run the script as follows: python multiUser_inference.py .\test_image.
+   - You can see the result below:
+      - <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/EnsembleResult.PNG" width = "300" height = "180" hspace="180" align=center />
 
 ## 3. <span id="3">Citation</span>
 
