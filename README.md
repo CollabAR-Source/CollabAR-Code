@@ -78,3 +78,16 @@ An example of training Gaussian noise expert:
    - Run the script as follows: python .\trainExpert.py GN.
    - The generated weights named "*Gaussian_noise_expert.hdf5*" will be saved in a created folder named "*weights*".
    
+   
+ 
+
+## 3. <span id="3">Citation</span>
+
+Please cite the following paper in your publications if the code helps your research.
+
+     @inproceedings{Liu20CollabAR,
+      title={{CollabAR}: Edge-assisted collaborative image recognition for mobile augmented reality },
+      author={Liu, Zida and Lan, Guohao and Stojkovic, Jovan and Yunfan, Zhang and Joe-Wong, Carlee and Gorlatova, Maria},
+      booktitle={Proceedings of the 19th ACM/IEEE Conference on Information Processing in Sensor Networks},
+      year={2020}
+    }
