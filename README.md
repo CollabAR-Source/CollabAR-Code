@@ -1,4 +1,7 @@
 # CollabAR-Code
+[![Website shields.io](https://img.shields.io/badge/python-3.6%2B-green)](http://shields.io/)  [![Website shields.io](https://img.shields.io/badge/numpy-1.16-yellow)](http://shields.io/) [![Website shields.io](https://img.shields.io/badge/opencv--python-4.1-lightgrey)](http://shields.io/) [![Website shields.io](https://img.shields.io/badge/scikit--image-0.16.2-blue)](http://shields.io/)
+
+
 
 This repository contains the introductions and the code of the distortion-tolerant image recognizer and the auxiliary-assisted multi-view ensembler for IPSN 2020 paper ["CollabAR: Edge-assisted Collaborative Image Recognition for Mobile Augmented Reality"]() by [Zida Liu](daliu.github.io), [Guohao Lan](https://guohao.netlify.com/), Jovan Stojkovic, Yunfan Zhang, [Carlee Joe-Wong](https://www.andrew.cmu.edu/user/cjoewong/), and [Maria Gorlatova](https://maria.gorlatova.com/).
 
