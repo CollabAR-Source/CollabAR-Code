@@ -33,26 +33,40 @@ spectrum of the grayscale image, and shift the zero-frequency component to the c
 used as the input for a shallow CNN architecture.
 
 #### 1.1.2 Image distortion classifier training
-The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset for training the classifer because this script can automatically generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images. Default distortion levels of generated distorted images are shown in the following table. You can change them in the script for your need.
-
-| Distortion category | Distortion parameter | Default distortion level |
-| ------ | ------ | ------ |
-| Motion blur | Blur kernel length | l ~ unif(5,30) |
-| Gaussian blur | Aperture size | k ~ unif(5,31) |
-| Gaussian noise | Variance | var ~ unif(10,30) |
-
+The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset for training the classifer because this script can automatically generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images. Default distortion levels of generated distorted are the same as that in IPSN paper. You can change them in the script for your need.
 
 To train the distortion classifier, follow the procedure below:
 
-1. Download the training script.
-2. Then, put the script and the training set folder in a same dir. Note that the training set folder cannot contain any non-image file.
-3. Run the script as follows: python .\trainDisClassifer.py -training_set
+1. Download the training script. Then put the script in the same dir with the training set folder. Note that the training set folder cannot contain any non-image file.
+2. Run the script as follows: python .\trainDisClassifer.py -training_set
    - *training_set*: indicates dir that contains the training images.
-5. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
+3. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
 
 ### 1.2 Recognition experts
 Based on the output of the distortion classifier, one of the four dedicated recognition experts is selected for the image recognition. Here, we use the lightweight MobileNetV2 as the base DNN model for training the recognition experts.
 
 #### 1.2.1 Recognition experts training
 When training the experts, all the CNN layers are first initialized with the values trained on the full ImageNet dataset. Then, we use pristine images in the target dataset to train a pristine expert. Finally, we fine-tune the pristine expert to get motion blur expert, Gaussian blur expert and Gaussian noise expert. During the fine-tuning, half of the images in the mini-batch are pristine and the other half are distorted with a random distortion level. This ensures better robustness against variations in the distortion level (i.e., it helps in minimizing the effect of domain-induced changes in feature distribution) and helps the CNNs to learn features from both
-pristine and distorted images.
+pristine and distorted images. 
+
+
+The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainExpert.py. Default distortion levels for training the recognition experts are the same as that in IPSN paper. You can change them in the script for your need. To train the recognition experts, follow the procedure below:
+
+1. Download the training script and put it in the same dir with the training set, the validation set and the testing set.
+   - The file tree for training:
+```
+└───trainExpert.py
+└───train
+│   └───class0
+│       │   image0.jpg
+│       │   image1.jpg
+│       │   ...
+│   └───class1
+|   └───class2
+│   │   ...
+└───validation
+└───test
+```
+2. Run the script as follows: python .\trainExpert.py -expert_type
+   - *expert_type*: the type of the expert, i.e., *MB* for motion blur, *GB* for Gaussian blur, *GN* for Gaussian noise.
+3. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
