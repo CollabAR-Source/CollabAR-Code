@@ -96,18 +96,14 @@ def main(path):
 		if a == 1:
 			X_train[i] = motion_blur(images, random.randint(5,40))
 			X_train_F[i,:,:,0] = get_Fourier(rgb2gray(X_train[i]))
-			cv2.imwrite('./2.jpg',X_train_F[i]*255)
 		elif a == 2:
 			X_train[i] = gaussion_blur(images , random.randint(3,20))
 			X_train_F[i,:,:,0] = get_Fourier(rgb2gray(X_train[i]))
-			cv2.imwrite('./3.jpg',X_train_F[i]*255)
 		elif a == 3:
 			X_train[i] = gaussion_noise(images, random.randint(5,40))
 			X_train_F[i,:,:,0] = get_Fourier(rgb2gray(X_train[i]))
-			cv2.imwrite('./4.jpg',X_train_F[i]*255)
 		else:
 			X_train_F[i,:,:,0] = get_Fourier(rgb2gray(images))
-			cv2.imwrite('./5.jpg',X_train_F[i]*255)
 		type_label_train[i] = a
 		i = i + 1
 
