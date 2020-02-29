@@ -16,7 +16,7 @@ If you have any questions on this repository or the related paper, please create
 
 
 ## 1. <span id="1">Distortion-tolerant-image-recognizer</span>
-In the CollabAR system, the distortion image recognizer incorporates an image distortion classifier and four recognition experts to resolve the domain adaptation problem caused by the image distortions. As DNNs can adapt to a particular distortion, but not multiple distortions at the same time, we need to identify the most significant distortion in the image, and adaptively select a DNN that is dedicated to the detected distortion. The architecture is shown below:
+In the CollabAR system, the distortion image recognizer incorporates an image distortion classifier and four recognition experts to resolve the domain adaptation problem caused by the image distortions. As DNNs can adapt to a particular distortion, but not multiple distortions at the time, we need to identify the most significant distortion in the image, and adaptively select a DNN that is dedicated to the detected distortion. The architecture is shown below:
 
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Distortion-tolerant.PNG" width = "600" height = "260" hspace="70" align=center />
 
@@ -36,12 +36,12 @@ spectrum of the grayscale image, and shift the zero-frequency component to the c
 used as the input for a shallow CNN architecture.
 
 #### 1.1.2 Image distortion classifier training
-The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset for training the classifier because this script can automatically generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images. Default distortion levels of generated distorted images are the same as that in IPSN paper. You can change them in the script for your needs.
+The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset for training the classifier because this script can automatically generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images. Default distortion levels of generated distorted images are the same as those in IPSN paper. You can change them in the script for your needs.
 
 To train the distortion classifier, follow the procedure below:
 
 1. Prepare your training set and put it in the *CollabAR-Code* dir. Note that the dataset folder cannot contain non-image files.
-2. Change directory to the *CollabAR-Code* dir.
+2. Change the current directory to the *CollabAR-Code* dir.
 3. Run the script as follows: `python .\trainDisClassifer.py -training_set`
    - *training_set*: indicates dir that contains the training images.
 4. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
@@ -54,7 +54,7 @@ When training the experts, all the CNN layers are first initialized with the val
 
 The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainExpert.py. Default distortion levels for training the recognition experts are the same as that in IPSN paper. You can change them in the script for your needs. To train the recognition experts, follow the procedure below:
 
-1. Change directory to the *CollabAR-Code* dir.
+1. Change the current directory to the *CollabAR-Code* dir.
 2. Prepare the training set, the validation set and the testing set. 
 The file tree for training:
 ```
@@ -87,15 +87,15 @@ CollabAR aggregates the recognition results of the spatially and temporally corr
 ### 2.1 The architecture of the Auxiliary-assisted multiview ensembler
 The architecture of the Auxiliary-assisted multiview ensembler is shown below:
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Ensemble.PNG" width = "500" height = "280" hspace="180" align=center />
-The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to caculate ***S*** and how to aggregate ***P*** in IPSN paper.
+The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to calculate ***S*** and how to aggregate ***P*** in IPSN paper.
 
 ### 2.2 The Auxiliary-assisted multiview ensembler inference
 The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/multiUser_inference.py.
 
-1. Change directory to the *CollabAR-Code* dir.
+1. Change the current directory to the *CollabAR-Code* dir.
 2. Run the script as follows: `python .\multiUser_inference.py -multi-view-folder`
    - *multi-view-folder*: indicates dir that contains the multi-view images.
-3. You can see the *confidence scores*, *inference result* of a single image and also the aggregated *inference result* of all the images in the folder.
+3. You can see the *confidence scores*, *inference result* of a single image, and also the aggregated *inference result* of all the images in the folder.
 
 As an example, we provide a group of multi-view images for the auxiliary-assisted multiview ensembler inference.
    - Run the script as follows: `python multiUser_inference.py .\test_image.`
