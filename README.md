@@ -2,7 +2,7 @@
 
 This repository contains the introductions and the code of the distortion-tolerant image recognizer and the auxiliary-assisted multi-view ensembler for IPSN 2020 paper ["CollabAR: Edge-assisted Collaborative Image Recognition for Mobile Augmented Reality"]() by [Zida Liu](daliu.github.io), [Guohao Lan](https://guohao.netlify.com/), Jovan Stojkovic, Yunfan Zhang, [Carlee Joe-Wong](https://www.andrew.cmu.edu/user/cjoewong/), and [Maria Gorlatova](https://maria.gorlatova.com/).
 
-Before running the scripts in this repository, you should install the necessary tools and libraries on your computer, including: open-cv, skimage, numpy, keras, tensorflow and sklearn.
+Before running the scripts in this repository, you should install the necessary tools and libraries on your computer, including open-cv, skimage, numpy, keras, tensorflow and sklearn.
 
 If you have any questions on this repository or the related paper, please create an issue or send me an email. Email address: zida.liu AT duke.edu.
 
