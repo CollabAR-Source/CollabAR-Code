@@ -97,7 +97,7 @@ The training script is provided via https://github.com/CollabAR-Source/CollabAR-
 As an example, we provide a group of multi-view images for the auxiliary-assisted multiview ensembler inference.
    - Run the script as follows: python multiUser_inference.py .\test_image.
    - You can see the result below:
-      - <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/EnsembleResult.PNG" width = "300" height = "180" hspace="180" align=center />
+   <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/EnsembleResult.PNG" width = "320" height = "200" hspace="200" align=center />
 
 ## 3. <span id="3">Citation</span>
 
