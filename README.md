@@ -84,12 +84,12 @@ An example of training Gaussian noise expert:
 CollabAR aggregates the recognition results of the spatially and temporally correlated images to improve the recognition accuracy of the current image. However, given the heterogeneity of the m images (i.e., images are captured from different angles, suffer from different distortions with different distortion levels), the images lead to unequal recognition performance. To quantify their performance and help the ensembler in aggregating the results dynamically, auxiliary features can be used. 
 
 
-### 2.1 The architecture of the Auxiliary-assisted multiview ensembler
-The architecture of the Auxiliary-assisted multiview ensembler is shown below:
+### 2.1 The architecture of the Auxiliary-assisted multi-view ensembler
+The architecture of the Auxiliary-assisted mult-iview ensembler is shown below:
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Ensemble.PNG" width = "500" height = "280" hspace="180" align=center />
 The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to calculate ***S*** and how to aggregate ***P*** in IPSN paper.
 
-### 2.2 The Auxiliary-assisted multiview ensembler inference
+### 2.2 The Auxiliary-assisted mult-iview ensembler inference
 The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/multiUser_inference.py.
 
 1. Change the current directory to the *CollabAR-Code* dir.
@@ -97,10 +97,10 @@ The training script is provided via https://github.com/CollabAR-Source/CollabAR-
    - *multi-view-folder*: indicates dir that contains the multi-view images.
 3. You can see the *confidence scores*, *inference result* of a single image, and also the aggregated *inference result* of all the images in the folder.
 
-As an example, we provide a group of multi-view images for the auxiliary-assisted multiview ensembler inference.
+As an example, we provide a group of multi-view images for the auxiliary-assisted multi-view ensembler inference.
    - Run the script as follows: `python multiUser_inference.py .\test_image.`
    - You can see the result below:
-   <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/EnsembleResult.PNG" width = "320" height = "200" hspace="200" align=center />
+   <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/EnsembleResult.PNG" width = "320" height = "220" hspace="200" align=center />
 
 ## 3. <span id="3">Citation</span>
 
