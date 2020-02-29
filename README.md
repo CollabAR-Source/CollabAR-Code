@@ -40,10 +40,11 @@ The training script is provided via https://github.com/CollabAR-Source/CollabAR-
 
 To train the distortion classifier, follow the procedure below:
 
-1. Download the training script. Then put the script in the same dir with the training set folder. Note that the training set folder cannot contain non-image files.
-2. Run the script as follows: python .\trainDisClassifer.py -training_set
+1. Prepare your dataset and put it in *CollabAR-Code* dir. Note that the dataset folder cannot contain non-image files.
+2. Change directory to *CollabAR-Code* dir.
+3. Run the script as follows: `python .\trainDisClassifer.py -training_set`
    - *training_set*: indicates dir that contains the training images.
-3. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
+4. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
 
 ### 1.2 Recognition experts
 Based on the output of the distortion classifier, one of the four dedicated recognition experts is selected for image recognition. Here, we use the lightweight MobileNetV2 as the base DNN model for training the recognition experts.
@@ -53,7 +54,8 @@ When training the experts, all the CNN layers are first initialized with the val
 
 The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainExpert.py. Default distortion levels for training the recognition experts are the same as that in IPSN paper. You can change them in the script for your needs. To train the recognition experts, follow the procedure below:
 
-1. Download the training script and put it in the same dir with the training set, the validation set and the testing set. 
+1. Change directory to *CollabAR-Code* dir.
+2. Prepare the training set, the validation set and the testing set. 
 The file tree for training:
 ```
 └───trainExpert.py
@@ -68,11 +70,11 @@ The file tree for training:
 └───validation
 └───test
 ```
-2. Run the script as follows: python .\trainExpert.py -expert_type
+3. Run the script as follows: python `.\trainExpert.py -expert_type`
    - *expert_type*: the type of the expert, i.e., *pristine* for the pristine expert, *MB* for motion blur expert, *GB* for Gaussian blur expert, *GN* for Gaussian noise expert.
 
 An example of training Gaussian noise expert:
-   - Run the script as follows: python .\trainExpert.py pristine.
+   - Run the script as follows: `python .\trainExpert.py pristine.`
    - The generated weights named "*pristine_expert.hdf5*" will be saved in a created folder named "*weights*".
    - Uncomment the 113th line in the script.
    - Run the script as follows: python .\trainExpert.py GN.
@@ -90,12 +92,12 @@ The normalized entropy ***S*** measures the recognition quality and the confiden
 ### 2.2 The Auxiliary-assisted multiview ensembler inference
 The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/multiUser_inference.py.
 
-1. Run the script as follows: python .\multiUser_inference.py -multi-view-folder
+1. Run the script as follows: `python .\multiUser_inference.py -multi-view-folder`
    - *multi-view-folder*: indicates dir that contains the multi-view images.
 2. You can see the *confidence scores*, *inference result* of a single image and also the aggregated *inference result* of all the images in the folder.
 
 As an example, we provide a group of multi-view images for the auxiliary-assisted multiview ensembler inference.
-   - Run the script as follows: python multiUser_inference.py .\test_image.
+   - Run the script as follows: `python multiUser_inference.py .\test_image.`
    - You can see the result below:
    <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/EnsembleResult.PNG" width = "320" height = "200" hspace="200" align=center />
 
