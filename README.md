@@ -121,7 +121,7 @@ Please cite the following paper in your publications if the code helps your rese
 
 The authors of the code is [Zida Liu](https://zidaliu.github.io/). This work was done in the [Intelligent Interactive Internet of Things Lab](https://maria.gorlatova.com/) at [Duke University](https://www.duke.edu/).
 
-Contact Information of the code: 
+Contact Information of the contributor: 
 
 * zida.liu AT duke.edu
 
