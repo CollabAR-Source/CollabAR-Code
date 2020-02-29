@@ -4,6 +4,7 @@ This repository contains the introductions and the code of the distortion-tolera
 
 Before running the scripts in this repository, you should install the necessary tools and libraries on your computer, including: open-cv, skimage, numpy, keras, tensorflow and sklearn.
 
+If you have any questions on this repository or the related paper, please create an issue or send me an email. Email address: zida.liu AT duke.edu.
 **Summary**:
 
 * [Distortion-tolerant-image-recognizer](#1)
