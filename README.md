@@ -79,7 +79,7 @@ An example of training Gaussian noise expert:
    - The generated weights named "*Gaussian_noise_expert.hdf5*" will be saved in a created folder named "*weights*".
    
 ## 2. <span id="2">Auxiliary-assisted multi-view ensembler</span>  
- 
+CollabAR aggregates the recognition results of the spatially and temporally correlated images to improve the recognition accuracy of the current image
 
 ## 3. <span id="3">Citation</span>
 
