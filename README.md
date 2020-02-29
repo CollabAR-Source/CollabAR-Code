@@ -87,6 +87,11 @@ The architecture of the Auxiliary-assisted multiview ensembler is shown below:
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Ensemble.PNG" width = "500" height = "280" hspace="180" align=center />
 The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to caculate ***S*** and how to aggregate ***P*** in IPSN paper.
 
+### 2.2 The Auxiliary-assisted multiview ensembler inference
+The architecture of the Auxiliary-assisted multiview ensembler is shown below:
+<img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Ensemble.PNG" width = "500" height = "280" hspace="180" align=center />
+The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to caculate ***S*** and how to aggregate ***P*** in IPSN paper.
+
 ## 3. <span id="3">Citation</span>
 
 Please cite the following paper in your publications if the code helps your research.
