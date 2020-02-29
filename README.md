@@ -52,8 +52,7 @@ pristine and distorted images.
 
 The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainExpert.py. Default distortion levels for training the recognition experts are the same as that in IPSN paper. You can change them in the script for your need. To train the recognition experts, follow the procedure below:
 
-1. Download the training script and put it in the same dir with the training set, the validation set and the testing set.
-   - The file tree for training:
+1. Download the training script and put it in the same dir with the training set, the validation set and the testing set. The file tree for training:
 ```
 └───trainExpert.py
 └───train
@@ -68,5 +67,12 @@ The training script is provided via https://github.com/CollabAR-Source/CollabAR-
 └───test
 ```
 2. Run the script as follows: python .\trainExpert.py -expert_type
-   - *expert_type*: the type of the expert, i.e., *MB* for motion blur, *GB* for Gaussian blur, *GN* for Gaussian noise.
-3. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
+   - *expert_type*: the type of the expert, i.e., *prinstine* for the pristine expert, *MB* for motion blur expert, *GB* for Gaussian blur expert, *GN* for Gaussian noise expert.
+
+An example for training the Gaussian noise expert:
+   - Run the script as follows: python .\trainExpert.py prinstine.
+   - The generated weights named "*pristin_expert.hdf5*" will be saved in a created folder named "*weights*".
+   - Uncommon the 113th line in the script.
+   - Run the script as follows: python .\trainExpert.py GN.
+   - The generated weights named "*Gaussian_noise_expert.hdf5*" will be saved in a created folder named "*weights*".
+   
