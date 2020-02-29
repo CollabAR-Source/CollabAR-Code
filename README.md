@@ -72,7 +72,7 @@ The file tree for training:
    - *expert_type*: the type of the expert, i.e., *prinstine* for the pristine expert, *MB* for motion blur expert, *GB* for Gaussian blur expert, *GN* for Gaussian noise expert.
 
 An example for training Gaussian noise expert:
-   - Run the script as follows: python .\trainExpert.py prinstine.
+   - Run the script as follows: python .\trainExpert.py pristine.
    - The generated weights named "*pristine_expert.hdf5*" will be saved in a created folder named "*weights*".
    - Uncomment the 113th line in the script.
    - Run the script as follows: python .\trainExpert.py GN.
