@@ -53,7 +53,8 @@ When training the experts, all the CNN layers are first initialized with the val
 
 The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainExpert.py. Default distortion levels for training the recognition experts are the same as that in IPSN paper. You can change them in the script for your need. To train the recognition experts, follow the procedure below:
 
-1. Download the training script and put it in the same dir with the training set, the validation set and the testing set. The file tree for training:
+1. Download the training script and put it in the same dir with the training set, the validation set and the testing set. 
+The file tree for training:
 ```
 └───trainExpert.py
 └───train
