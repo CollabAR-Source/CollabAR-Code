@@ -88,9 +88,12 @@ The architecture of the Auxiliary-assisted multiview ensembler is shown below:
 The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to caculate ***S*** and how to aggregate ***P*** in IPSN paper.
 
 ### 2.2 The Auxiliary-assisted multiview ensembler inference
-The architecture of the Auxiliary-assisted multiview ensembler is shown below:
-<img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Ensemble.PNG" width = "500" height = "280" hspace="180" align=center />
-The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to caculate ***S*** and how to aggregate ***P*** in IPSN paper.
+The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. We provide a group of multi-view images as an example for the auxiliary-assisted multiview ensembler inference.
+
+2. Run the script as follows: python .\trainDisClassifer.py -training_set
+   - *training_set*: indicates dir that contains the training images.
+3. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
+
 
 ## 3. <span id="3">Citation</span>
 
