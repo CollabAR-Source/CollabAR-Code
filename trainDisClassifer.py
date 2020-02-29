@@ -94,15 +94,15 @@ def main(path):
 		images = cv2.resize(images,(224,224))
 		a = random.randint(0,3)
 		if a == 1:
-			X_train[i] = motion_blur(images, random.randint(5,30))
+			X_train[i] = motion_blur(images, random.randint(5,40))
 			X_train_F[i,:,:,0] = get_Fourier(rgb2gray(X_train[i]))
 			cv2.imwrite('./2.jpg',X_train_F[i]*255)
 		elif a == 2:
-			X_train[i] = gaussion_blur(images , random.randint(2,15))
+			X_train[i] = gaussion_blur(images , random.randint(3,20))
 			X_train_F[i,:,:,0] = get_Fourier(rgb2gray(X_train[i]))
 			cv2.imwrite('./3.jpg',X_train_F[i]*255)
 		elif a == 3:
-			X_train[i] = gaussion_noise(images, random.randint(5,30))
+			X_train[i] = gaussion_noise(images, random.randint(5,40))
 			X_train_F[i,:,:,0] = get_Fourier(rgb2gray(X_train[i]))
 			cv2.imwrite('./4.jpg',X_train_F[i]*255)
 		else:
