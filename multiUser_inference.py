@@ -22,7 +22,7 @@ def singleUser(imagePath, type_model, model):
 
 
 	if (noiseType == "Clear Image"):
-		model.load_weights('./weights/clear_mobile_transfer.hdf5')
+		model.load_weights('./weights/pristine_expert.hdf5')
 		if image.mean()>1:
 			image = image/255
 		Output = model.predict(image[np.newaxis]) #get original prob vector
@@ -30,7 +30,7 @@ def singleUser(imagePath, type_model, model):
 		print("This image is a " + classes[np.argmax(Output)])
 
 	elif (noiseType == "Motion blur"):
-		model.load_weights('./weights/M0~40_mobile_transfer.hdf5')
+		model.load_weights('./weights/motion_blur_expert.hdf5')
 		if image.mean()>1:
 			image = image/255
 		Output = model.predict(image[np.newaxis]) #get original prob vector
@@ -38,7 +38,7 @@ def singleUser(imagePath, type_model, model):
 		print("This image is a " + classes[np.argmax(Output)])
 
 	elif (noiseType == "Gaussian blur"):
-		model.load_weights('./weights/GB0~41_mobile_transfer.hdf5')
+		model.load_weights('./weights/Gaussian_blur_expert.hdf5')
 		if image.mean()>1:
 			image = image/255
 		Output = model.predict(image[np.newaxis]) #get original prob vector
@@ -46,7 +46,7 @@ def singleUser(imagePath, type_model, model):
 		print("This image is a " + classes[np.argmax(Output)])
 
 	else:
-		model.load_weights('./weights/GN0~40_mobile_transfer.hdf5')
+		model.load_weights('./weights/Gaussian_noise_expert.hdf5')
 		if image.mean()>1:
 			image = image/255
 		Output = model.predict(image[np.newaxis]) #get original prob vector
