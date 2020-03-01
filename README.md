@@ -87,7 +87,7 @@ CollabAR aggregates the recognition results of the spatially and temporally corr
 ### 2.1 The architecture of the Auxiliary-assisted multi-view ensembler
 The architecture of the Auxiliary-assisted multi-view ensembler is shown below:
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Ensemble.PNG" width = "500" height = "280" hspace="180" align=center />
-The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to calculate ***S*** and how to aggregate ***P*** in IPSN paper.
+The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to calculate ***S*** and how to aggregate ***P*** with the help ***S*** in IPSN paper.
 
 ### 2.2 The Auxiliary-assisted multi-view ensembler inference
 The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/multiUser_inference.py.
