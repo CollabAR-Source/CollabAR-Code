@@ -43,7 +43,7 @@ To train the distortion classifier, follow the procedure below:
 1. Prepare your training set and put it in the *CollabAR-Code* dir. Note that the dataset folder cannot contain non-image files.
 2. Change the current directory to the *CollabAR-Code* dir.
 3. Run the script as follows: `python .\trainDisClassifer.py -training_set`
-   - *training_set*: indicates dir that contains the training images.
+   - *training_set*: indicates dir that contains the images for training.
 4. The generated weights named "*type_model.hdf5*" will be saved in a created folder named "*weights*".
 
 ### 1.2 Recognition experts
