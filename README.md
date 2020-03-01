@@ -95,9 +95,9 @@ The training script is provided via https://github.com/CollabAR-Source/CollabAR-
 1. Change the current directory to the *CollabAR-Code* dir.
 2. Run the script as follows: `python .\multiUser_inference.py -multi-view-folder`
    - *multi-view-folder*: indicates dir that contains the multi-view images.
-3. You can see the *confidence scores*, *inference result* of a single image, and also the aggregated *inference result* of all the images in the folder.
+3. You can see the *confidence scores*, *inference result* of each image in the folder, and also the aggregated *inference result* of all the images in the folder.
 
-As an example, we provide a group of multi-view images for the auxiliary-assisted multi-view ensembler inference.
+As an example, we provide a group of multi-view images for the inference, you can find them in the *test_image* folder in this repository.
    - Run the script as follows: `python multiUser_inference.py .\test_image.`
    - You can see the result below:
    <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/EnsembleResult.PNG" width = "320" height = "220" hspace="200" align=center />
