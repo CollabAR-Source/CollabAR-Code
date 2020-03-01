@@ -70,7 +70,7 @@ The file tree for training:
 └───validation
 └───test
 ```
-3. Run the script as follows: `python `.\trainExpert.py -expert_type`
+3. Run the script as follows: `python .\trainExpert.py -expert_type`
    - *expert_type*: the type of the expert, i.e., *pristine* for the pristine expert, *MB* for motion blur expert, *GB* for Gaussian blur expert, *GN* for Gaussian noise expert.
 
 An example of training Gaussian noise expert:
