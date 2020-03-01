@@ -81,7 +81,7 @@ An example of training Gaussian noise expert:
    - The generated weights named "*Gaussian_noise_expert.hdf5*" will be saved in a created folder named "*weights*".
    
 ## 2. <span id="2">Auxiliary-assisted multi-view ensembler</span>  
-CollabAR aggregates the recognition results of the spatially and temporally correlated images to improve the recognition accuracy of the current image. However, given the heterogeneity of the m images (i.e., images are captured from different angles, suffer from different distortions with different distortion levels), the images lead to unequal recognition performance. To quantify their performance and help the ensembler in aggregating the results dynamically, auxiliary features can be used. 
+CollabAR aggregates the recognition results of the spatially and temporally correlated images to improve the recognition accuracy of the current image. However, given the heterogeneity of the *m* images (i.e., images are captured from different angles, suffer from different distortions with different distortion levels), the images lead to unequal recognition performance. To quantify their performance and help the ensembler in aggregating the results dynamically, auxiliary features can be used. 
 
 
 ### 2.1 The architecture of the Auxiliary-assisted multi-view ensembler
