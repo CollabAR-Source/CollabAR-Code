@@ -86,22 +86,22 @@ def main(argv):
         train_datagen = ImageDataGenerator(preprocessing_function=pristine)
         validation_datagen = ImageDataGenerator(preprocessing_function=pristine)
         test_datagen = ImageDataGenerator(preprocessing_function=pristine)
-        filepath="./weight/pristine_expert.hdf5"
+        filepath="./weights/pristine_expert.hdf5"
     elif argv[1] == 'MB':
         train_datagen = ImageDataGenerator(preprocessing_function=motion_blur)
         validation_datagen = ImageDataGenerator(preprocessing_function=motion_blur)
         test_datagen = ImageDataGenerator(preprocessing_function=motion_blur)
-        filepath="./weight/motion_blur_expert.hdf5"
+        filepath="./weights/motion_blur_expert.hdf5"
     elif argv[1] == 'GB':
         train_datagen = ImageDataGenerator(preprocessing_function=gaussion_blur)
         validation_datagen = ImageDataGenerator(preprocessing_function=gaussion_blur)
         test_datagen = ImageDataGenerator(preprocessing_function=gaussion_blur)
-        filepath="./weight/Gaussian_blur_expert.hdf5"
+        filepath="./weights/Gaussian_blur_expert.hdf5"
     else:
         train_datagen = ImageDataGenerator(preprocessing_function=gaussion_noise)
         validation_datagen = ImageDataGenerator(preprocessing_function=gaussion_noise)
         test_datagen = ImageDataGenerator(preprocessing_function=gaussion_noise)
-        filepath="./weight/Gaussian_noise_expert.hdf5"
+        filepath="./weights/Gaussian_noise_expert.hdf5"
 
     train_generator = train_datagen.flow_from_directory('train', target_size=(224,224),batch_size=batch_size, class_mode = 'categorical')
     validation_generator = validation_datagen.flow_from_directory('validation', target_size=(224,224),batch_size=batch_size, class_mode = 'categorical')
