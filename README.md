@@ -87,7 +87,7 @@ CollabAR aggregates the recognition results of the spatially and temporally corr
 ### 2.1 The architecture of the Auxiliary-assisted multi-view ensembler
 The architecture of the Auxiliary-assisted multi-view ensembler is shown below:
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Ensemble.PNG" width = "500" height = "280" hspace="180" align=center />
-The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to calculate ***S*** and how to aggregate ***P*** with the help ***S*** in IPSN paper.
+The normalized entropy ***S*** measures the recognition quality and the confidence of the distortion tolerant image recognizer on the recognition of an image instance. ***P*** is the probability vector of the base expert on an image instance. We propose to use the normalized entropy  ***S*** as the auxiliary feature to help aggregate the probability vectors ***P***  of the base experts. You can find details about how to calculate ***S*** and how to aggregate ***P*** with the help ***S*** in the IPSN paper referenced above.
 
 ### 2.2 The Auxiliary-assisted multi-view ensembler inference
 The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/multiUser_inference.py.
@@ -115,10 +115,10 @@ Please cite the following paper in your publications if the code helps your rese
     
 ## 4. <span id="4">Acknowledgments</span>
 
-The author of the code is [Zida Liu](https://zidaliu.github.io/). This work was done in the [Intelligent Interactive Internet of Things Lab](https://maria.gorlatova.com/) at [Duke University](https://www.duke.edu/).
+The authors of the code are [Zida Liu](https://zidaliu.github.io/), [Guohao Lan](https://guohao.netlify.com/) and [Maria Gorlatova](https://maria.gorlatova.com/). This work was done in the [Intelligent Interactive Internet of Things Lab](https://maria.gorlatova.com/) at [Duke University](https://www.duke.edu/).
 
 Contact Information of the contributor: 
 
 * zida.liu AT duke.edu
 
-This work is supported in part the Lord Foundation of North Carolina and by NSF awards CSR-1903136 and CNS-1908051.
+This work is supported by the Lord Foundation of North Carolina and by NSF awards CSR-1903136 and CNS-1908051.
