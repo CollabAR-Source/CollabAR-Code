@@ -109,8 +109,9 @@ def main(argv):
 
     checkpoint = keras.callbacks.ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='auto')
     callbacks_list = [checkpoint]
-
-#   model.load_weights('./weights/pristin_expert.hdf5')
+    
+    if argv[1] != 'pristin':
+        model.load_weights('./weights/pristin_expert.hdf5')
 
     STEP_SIZE_TRAIN=train_generator.n//train_generator.batch_size
     STEP_SIZE_VALID=validation_generator.n//validation_generator.batch_size
