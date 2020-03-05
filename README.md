@@ -76,7 +76,6 @@ The file tree for training:
 An example of training a Gaussian noise expert:
    - Run the script as follows: `python .\trainExpert.py pristine.`
    - The generated weights named "*pristine_expert.hdf5*" will be saved in a created folder named "*weights*".
-   - Uncomment the 113th line in the script.
    - Run the script as follows: `python .\trainExpert.py GN.`
    - The generated weights named "*Gaussian_noise_expert.hdf5*" will be saved in a created folder named "*weights*".
    
