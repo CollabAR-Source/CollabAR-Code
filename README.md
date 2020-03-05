@@ -20,7 +20,7 @@ If you have any questions on this repository or the related paper, please create
 
 
 ## 1. <span id="1">Distortion-tolerant-image-recognizer</span>
-In the CollabAR system, the distortion image recognizer incorporates an image distortion classifier and four recognition experts to resolve the domain adaptation problem caused by the image distortions. As DNNs can adapt to a particular distortion, but not multiple distortions at the time, we need to identify the most significant distortion in the image, and adaptively select a DNN that is dedicated to the detected distortion. The architecture is shown below:
+In the CollabAR system, the distortion image recognizer incorporates an image distortion classifier and four recognition experts to resolve the domain adaptation problem caused by the image distortions. As DNNs can adapt to a particular distortion, but not multiple distortions at a time, we need to identify the most significant distortion in the image, and adaptively select a DNN that is dedicated to the detected distortion. The architecture is shown below:
 
 <img src="https://github.com/CollabAR-Source/CollabAR-Code/blob/master/figures/Distortion-tolerant.PNG" width = "600" height = "260" hspace="70" align=center />
 
@@ -36,7 +36,7 @@ spectrum of the grayscale image, and shift the zero-frequency component to the c
 used as the input for a shallow CNN architecture.
 
 #### 1.1.2 Image distortion classifier training
-The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset for training the classifier because this script can automatically generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images. Default distortion levels of generated distorted images are the same as those in IPSN paper. You can change them in the script for your needs.
+The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainDisClassifer.py. You only need to provide a pristine image dataset for training the classifier because this script can automatically generate *Motion blur*, *Gaussian blur*, and *Gaussian noise* images. Default distortion levels of generated distorted images are the same as those in the IPSN paper reference above. You can change them in the script for your needs.
 
 To train the distortion classifier, follow the procedure below:
 
@@ -50,12 +50,12 @@ To train the distortion classifier, follow the procedure below:
 Based on the output of the distortion classifier, one of the four dedicated recognition experts is selected for image recognition. Here, we use the lightweight MobileNetV2 as the base DNN model for training the recognition experts.
 
 #### 1.2.1 Recognition experts training
-When training the experts, all the CNN layers are first initialized with the values trained on the full ImageNet dataset. Then, we use pristine images in the target dataset to train a **pristine expert**. Finally, we fine-tune the pristine expert to get **motion blur expert**, **Gaussian blur expert**, and **Gaussian noise expert**. During the fine-tuning, half of the images in the mini-batch are pristine, and the other half are distorted with a random distortion level.
+When training the experts, all the CNN layers are first initialized with the values trained on the full ImageNet dataset. Then, we use pristine images in the target dataset to train a **pristine expert**. Finally, we fine-tune the pristine expert to get **Motion blur expert**, **Gaussian blur expert**, and **Gaussian noise expert**. During the fine-tuning, half of the images in the mini-batch are pristine, and the other half are distorted with a random distortion level.
 
-The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainExpert.py. Default distortion levels for training the recognition experts are the same as that in IPSN paper. You can change them in the script for your needs. To train the recognition experts, follow the procedure below:
+The training script is provided via https://github.com/CollabAR-Source/CollabAR-Code/blob/master/trainExpert.py. Default distortion levels for training the recognition experts are the same as that in the IPSN paper referenced above. You can change them in the script for your needs. To train the recognition experts, follow the procedure below:
 
 1. Change the current directory to the *CollabAR-Code* dir.
-2. Prepare the training set, the validation set and the testing set. 
+2. Prepare the training set, the validation set, and the testing set. 
 The file tree for training:
 ```
 └───trainExpert.py
@@ -71,9 +71,9 @@ The file tree for training:
 └───test
 ```
 3. Run the script as follows: `python .\trainExpert.py -expert_type`
-   - *expert_type*: the type of the expert, i.e., *pristine* for the pristine expert, *MB* for motion blur expert, *GB* for Gaussian blur expert, *GN* for Gaussian noise expert.
+   - *expert_type*: the type of the expert, i.e., *pristine* for the pristine expert, *MB* for Motion blur expert, *GB* for Gaussian blur expert, *GN* for Gaussian noise expert.
 
-An example of training Gaussian noise expert:
+An example of training a Gaussian noise expert:
    - Run the script as follows: `python .\trainExpert.py pristine.`
    - The generated weights named "*pristine_expert.hdf5*" will be saved in a created folder named "*weights*".
    - Uncomment the 113th line in the script.
