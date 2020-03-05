@@ -120,5 +120,7 @@ The authors of the code are [Zida Liu](https://zidaliu.github.io/), [Guohao Lan]
 Contact Information of the contributor: 
 
 * zida.liu AT duke.edu
+* guohao.lan AT duke.edu
+* maria.gorlatova AT duke.edu
 
 This work is supported by the Lord Foundation of North Carolina and by NSF awards CSR-1903136 and CNS-1908051.
