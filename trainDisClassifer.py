@@ -144,7 +144,7 @@ def main(path):
 	model.fit(X_train_F, y_train,
 	              batch_size=batch_size,
 	              epochs=100,
-	              validation_split=0.3,
+	              validation_split=0.5,
 	              callbacks = callbacks_list,
 	              shuffle=True)
 
