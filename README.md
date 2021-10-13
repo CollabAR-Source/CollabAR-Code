@@ -122,4 +122,4 @@ Contact Information of the contributor:
 * guohao.lan AT duke.edu
 * maria.gorlatova AT duke.edu
 
-This work is supported by the Lord Foundation of North Carolina and by NSF awards CSR-1903136 and CNS-1908051.
+This work is supported by the Lord Foundation of North Carolina, the IBM Faculty Award, and by NSF awards CSR-1903136 and CNS-1908051.
